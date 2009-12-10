@@ -1,0 +1,55 @@
+h1. Orlando Code Kata Challenge #1 - Codebreaker Marker
+
+!http://img.skitch.com/20091210-pd2xqxt9u9eu5ga7uf77ngp7gf.png!
+
+Back in 1971, a UK company produced a 2 player code-breaking puzzle game that took the world by storm. It was called Mastermind and here's how it is played.  There are two players- the code setter and the code breaker. The code setter picks 4 pegs from 6 colors and arranges them in order. The pegs are colored red, blue, yellow, green, white and orange. Any combination including duplicates is allowed eg RBWO or RRRG etc.
+
+The code breaker has to guess what the color and order of the pegs are. The guess is marked by the code maker who provides a red for every peg of the right color in the right place, and a white for a correct color in the wrong place. The code breaker keeps guessing until they guess correctly or hasn't guessed it in 10 guesses. In the challenge your application gets 15 guesses.
+
+Your mission is to write an application will properly give markers for a guess.  So
+
+Given we have 6 colors.
+r - Red
+y - Yellow
+g - Green
+c - Cyan
+p - Purple
+o - Orange
+
+And Two markers
+m - Right color, wrong place
+p - Right color, right place
+
+Given the Secret is:  r y g b
+And the Guess is:     b g c c
+Your app should mark: ['m', 'm'] – two colors right, but in the wrong place
+
+Secret: r y g b
+Guess:  r b c y
+Mark: ['p', 'm', 'm'] – one color in right place (r), and two colors right, but wrong place (b, y)
+
+Also see "here":http://www.trazoi.net/flash/games/CodeBreaker.html for a flash game (although ours will only have 4 rows, not 6)
+
+I recommend starting out small, and doing test driven development.
+
+0 matches should return [] 
+   - Given secret of "r y g b", and guess of "c c c c", should return []
+   
+1 non-positional match should return ["m"]
+   - Given secret of "r y g b", and guess of "b c c c", should return ['m']
+
+2 non-positional matches should return ["m", "m"]
+   - Given secret of "r y g b", and guess of "b g c c", should return ['m', 'm']
+
+3 ... 
+
+4 ...
+
+1 positional match should return ["p"]
+   - Given secret of "r y g b", and guess of "r c c c", should return ['p']
+
+2 ...
+
+h1. Please fork this repository
+
+and commit all your code so that we can see your solutions.
